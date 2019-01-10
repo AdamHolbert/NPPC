@@ -1,4 +1,5 @@
 import React from 'react';
+import Player from './Player'
 
 const PlayerList = ({ players }) => (
     <>
@@ -10,9 +11,6 @@ const PlayerList = ({ players }) => (
                     No Players have been added yet.
                 </div>
             </div>
-        
-        
-        
         </>
         :
         <div className='container-fluid m-0'>
@@ -20,7 +18,7 @@ const PlayerList = ({ players }) => (
                 
                 
                 players.map(player => (
-                    'a'
+                    <Player key={player.name} isCool={true}player={player} />
                 ))
             }
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {MDBRow, MDBCol} from 'mdbreact'
 import {withFirebase} from "./Firebase/context";
 import PlayerList from './PlayerList'
 
@@ -27,7 +28,7 @@ class HomePage extends React.Component {
             
             const playerList = playerObject ? Object.keys(playerObject).map(playerId => ({
                 playerId: playerObject[playerId]
-            })) : ['asdf', 'ad'];
+            })) : [{'name':'Adam Holbert'}, {'name': 'Sear'}];
             
             this.setState({
                 playerList: playerList,
@@ -62,7 +63,15 @@ class HomePage extends React.Component {
         const {playerList} = this.state;
         return(
             <>
-                homepage
+                <MDBRow>
+                    <MDBCol className='h1 text-center bg-white'>
+                        Standing
+                    </MDBCol>
+
+                    <MDBCol className='h1 text-center bg-danger'>
+                        Stats
+                    </MDBCol>
+                </MDBRow>
                 <PlayerList players={playerList} />
             </>
         )
